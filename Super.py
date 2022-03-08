@@ -1,13 +1,3 @@
-# 다중 상속 (Multiple Inheritance)
-# - 부모가 두 개 이상
-
-# Method Overriding
-# from PIL import Image
-
-# myImage = Image.open("class.PNG");
-
-# myImage.show();
-
 # 일반 유닛
 class Unit: 
     # python constructor
@@ -39,10 +29,6 @@ class AttackUnit(Unit):
         if self.hp <= 0:
             print("{0} : 파괴되었습니다.".format(self.name))
 
-# 메딕 : 의무병
-
-# 드랍쉽 : 공중 유닛, 수송기, 마린/ 파이어뱃/ 탱크 등을 수송, 공격 X
-
 # 날 수 있는 기능을 가진 클래스
 class Flyable:
     def __init__(self, flying_speed):
@@ -62,18 +48,11 @@ class FlyableAttackUnit(AttackUnit, Flyable):
         print("[공중 유닛 이동]")
         self.fly(self.name, location)
 
-# 발키리: 공중 공격 유닛, 한 번에 14발 미사일 발사
-valkyrie = FlyableAttackUnit("Valkyrie", 200, 6, 5)
-valkyrie.fly(valkyrie.name, "3시")
-
-# 벌쳐 : 지상 유닛, 기동성이 좋음
-vulture = AttackUnit("Vulture", 80, 10, 20)
-
-# 배틀그루저: 공중 유닛, 체력이 굉장히 좋음, 공격력도 좋음.
-battlecruiser = FlyableAttackUnit("BattleCruiser", 500, 25, 3)
-
-vulture.move("11시")
-# battlecruiser.fly(battlecruiser.name, "9시")
-battlecruiser.move("9시")
+# 건물
+class BuildingUnit(Unit):
+    def __init__(self, name, hp, location):
+        # Unit.__init__(self, name, hp, 0)
+        super().__init(name, hp, 0)
+        self.location = location
 
 
