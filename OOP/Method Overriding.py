@@ -2,11 +2,6 @@
 # - 부모가 두 개 이상
 
 # Method Overriding
-# from PIL import Image
-
-# myImage = Image.open("class.PNG");
-
-# myImage.show();
 
 # 일반 유닛
 class Unit: 
