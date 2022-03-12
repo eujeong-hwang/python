@@ -11,7 +11,7 @@ class Unit:
         print("{0} 유닛이 생성되었습니다.".format(name))
     
     def move(self, location):
-        print("[지상 유닛 이동]")
+        # print("[지상 유닛 이동]")
         print("{0} : {1} 방향으로 이동합니다. [속도 {2}]"\
             .format(self.name, location, self.speed))
 
@@ -52,7 +52,7 @@ class Tank(AttackUnit):
     seize_developed = False # 시즈모드 개발 여부
 
     def __init__(self):
-        AttackUnit.__init__(self, "마린", 40, 1, 5)
+        AttackUnit.__init__(self, "탱크", 150, 1, 35)
         self.seize_mode = False
 
     def set_seize_mode(self):
@@ -62,13 +62,13 @@ class Tank(AttackUnit):
         # 현재 시즈모드가 아닐 때 -> 시즈모드
         if self.seize_mode == False:
             print("{0} : 시즈모드로 전환합니다.".format(self.name))
-            self.damage *=2
+            self.damage*=2
             self.seize_mode = True
 
         # 현재 시즈모드일 때 -> 시즈모드 해제
         else:
             print("{0} : 시즈모드로 해제합니다.".format(self.name))
-            self.damage /=2
+            self.damage/=2
             self.seize_mode = False
   
 # 날 수 있는 기능을 가진 클래스
@@ -87,7 +87,7 @@ class FlyableAttackUnit(AttackUnit, Flyable):
         Flyable.__init__(self, flying_speed)
 
     def move(self, location):
-        print("[공중 유닛 이동]")
+        # print("[공중 유닛 이동]")
         self.fly(self.name, location)
 
 # 레이스
