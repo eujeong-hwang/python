@@ -13,8 +13,9 @@ try:
     print("{0} / {1} = {2}".format(num1, num2, int(num1/num2)))
 
 except ValueError:
-    print("Wrong Value.")
+    print("Wrong Value. Only one digit numbers allowed")
 except BigNumberError as err:
     print("에러가 발생하였습니다. 한 자리 숫자만 입력하세요")
     print(err)
-    
+finally:
+    print("계산기를 이용해 주셔서 감사합니다.")
