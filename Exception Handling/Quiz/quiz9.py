@@ -33,4 +33,4 @@ while(True):
         print("잘못된 값을 입력하였습니다.")
     except SoldOutError:
         print("재고가 소진되어 더 이상 주문을 받지 않습니다.")
-        break
+        break # [SoldOutError]를 발생시키고 프로그램 종료
