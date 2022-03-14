@@ -21,7 +21,7 @@ while(True):
     try:
         print("[남은 치킨 : {0}]".format(chicken))
         order = int(input("치킨 몇 마리 주문하시겠습니까?"))
-        if order <= 0 and order != int:
+        if order <= 0 or order == str:
             raise ValueError
         elif order > chicken: # 남은 치킨보다 주문량이 많을 때
             print("재료가 부족합니다.")
